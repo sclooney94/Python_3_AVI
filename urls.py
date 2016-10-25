@@ -61,7 +61,7 @@ urlpatterns = patterns(
         views_api.JobData.as_view(),
         name='job_data'),
 
-    # url(r'^result/(?P<job_id>[0-9]+)/$',
-    #     views.job_result,
-    #     name='job_result')
+    url(r'^result/(?P<job_id>[0-9]+)/$',
+        views.job_result,
+        name='job_result')
 )

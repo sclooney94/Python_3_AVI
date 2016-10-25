@@ -78,11 +78,12 @@ def run_query(request):
     return JsonResponse({})
 
 
-# @require_http_methods(["GET"])
-# def job_result(request, job_id):
-#     job = get_object_or_404(DemoModel, request_id=job_id)
-#     file_path = job.request.result_path
-#     context = {'job_id': job.id}
-#     with open(file_path, 'r') as out_file:
-#         context.update(json.load(out_file))
-#     return render(request, 'avi/job_result.html', context=context)
+@require_http_methods(["GET"])
+def job_result(request, job_id):
+    job = get_object_or_404(DemoModel, request_id=job_id)
+    file_path = job.request.result_path
+    with open(file_path, 'r') as outFile:
+        # job_data = json.load(outFile)
+        job_data = outFile.read()
+    return render(request, 'avi/job_result.html', {'job_id': job_id,
+                  'job_data': job_data})
