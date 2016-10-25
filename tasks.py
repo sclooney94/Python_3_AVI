@@ -1,3 +1,14 @@
+"""
+GAVIP Example AVIS: Simple AVI
+
+An example AVI pipeline is defined here, consisting of three tasks:
+
+- DummyTask - demonstrates dependencies, but does nothing
+- DownloadData - uses services.gacs.GacsQuery to run ADQL queries in GACS(-dev)
+- ProcessData - generates a simple scatter plot with Bokeh from the downloaded data
+@req: REQ-0006
+@comp: AVI Web System
+"""
 import os
 from django.conf import settings
 # Class used for creating pipeline tasks
