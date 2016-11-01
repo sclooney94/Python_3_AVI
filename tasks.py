@@ -20,11 +20,13 @@ import numpy as np
 
 
 def list_1():
-    a=np.array([ 100, 4, 100, 7, 10, 17, 0, 100, 2, -4, 17, 4, 11, 100])
+    c=np.array([ 100, 4, 100, 7, 10, 17, 0, 100, 2, -4, 17, 4, 11, 100])
+    b = str(c)
+    a = b.encode('utf-8')
     return a
 
 
-class CalcFib(AviTask):
+class PrintList(AviTask):
     # fib_num = AviParameter()
 
     def output(self):
@@ -37,5 +39,4 @@ class CalcFib(AviTask):
         list_result = list_1()
         with open(self.output().path, 'wb') as out:
             print(list_result)
-            list_result = bytes(str(list_result), encoding="UTF-8")
             out.write(list_result)

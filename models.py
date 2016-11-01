@@ -36,7 +36,7 @@ class DemoModel(AviJob):
         return mean_time
 
     outputFile = models.CharField(default="", max_length=100)
-    pipeline_task = "CalcFib"
+    pipeline_task = "PrintList"
 
     def get_absolute_url(self):
         return "%i/" % self.pk
